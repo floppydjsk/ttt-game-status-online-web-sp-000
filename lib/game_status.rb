@@ -21,3 +21,27 @@ def won? (board)
     position_taken?(board,win)
   end
 end
+
+#full
+def full?(board)
+  board.all? do |taken|
+    taken == "X" || taken =="O"
+  end
+end
+
+#draw
+def draw?(board)
+  full?(board) && !won?(board)
+end
+
+#over
+def over?(board)
+  won?(board) || full?(board)
+end
+
+#winner
+def winner(board)
+  if winner = won?(board)
+    board[winner.first]
+  end
+end
