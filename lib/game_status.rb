@@ -16,6 +16,8 @@ WIN_COMBINATIONS = [
 ]
 
 #won
-board.detect do |won|
-won = WIN_COMBINATIONS
+def won? (board)
+  WIN_COMBINATIONS.find do |win|
+    position_taken?(board,win)
+  end
 end
